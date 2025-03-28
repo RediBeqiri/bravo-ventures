@@ -262,6 +262,7 @@ section {
     border: 1px var(--background-color);
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
 /* Flexbox for bilde + tekst-seksjonen */
