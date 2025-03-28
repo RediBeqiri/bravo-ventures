@@ -1,0 +1,548 @@
+/* Importerer fonter fra Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Fargepalett */
+:root {
+    --primary-color: #1D3557;
+    --secondary-color: #457B9D;
+    --accent-color: #E76F51;
+    --background-color: #F1FAEE;
+    --contrast-color: #2B2D42;
+}
+
+/* Nullstill margin og padding for å sikre konsistent layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Kroppen skal ha en ren layout med sentrert innhold */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--contrast-color);
+}
+
+/* Header og footer med gradient bakgrunn */
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Gjør logoen enda større uten å påvirke navbar */
+.logo img {
+    height: 120px; /* Økt størrelse */
+    width: auto;
+    margin-left: 40px;
+}
+
+/* Navigasjonsmeny - flytt menyen mer til høyre */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Flytter menyen mot høyre */
+    align-items: center;
+    padding-right: 40px; /* Justerer avstand fra høyrekant */
+    padding-left: 40px;
+
+}
+
+/* Gjør menyen mer moderne og brukervennlig */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Øker mellomrom mellom elementene */
+}
+
+nav ul li {
+    font-size: 20px; /* Gjør meny-elementene større */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Seksjoner - Justerer tekst og bilder for en mer balansert layout */
+section {
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Sørger for at bilde og tekst tar like mye plass */
+.section-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.img-container {
+    flex: 1;
+    text-align: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsiv justering */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section-img {
+        margin-top: 20px;
+    }
+}
+
+/* Hovedinnholdet */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+/* Seksjoner i hovedinnhold */
+section {
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    margin-bottom: 20px;
+    background-color: var(--background-color);
+}
+
+/* Flexbox for å plassere img-container og under-container ved siden av hverandre */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Fyller hele skjermbredden */
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sørger for at begge beholderne tar 50% av skjermen */
+.img-container, .under-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Justerer bildestørrelsen */
+.img-container img {
+    max-width: 100%;
+    height: 600px;
+}
+
+/* Styling for tekstdelen */
+.under-container {
+    width: 40%;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    word-wrap: break-word;
+    border-radius: 20px;
+}
+
+
+.under-container button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.under-container button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Flexbox for "Hvem er vi" og "Hva gjør vi" seksjonene */
+.text-boxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 20px;
+}
+
+.text-box {
+    padding: 15px; /* Mindre padding for en mer kompakt tekstboks */
+    max-width: 500px; /* Gjør tekstboksene litt mindre */
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.5;
+    border-radius: 20px;
+
+    /* Justering for mindre tekstbokser */
+    margin: 0 10px; /* Legger litt avstand mellom boksene */
+}
+
+/* Gjør tekstboksene responsivt tilpasset på mindre skjermer */
+@media (max-width: 768px) {
+    .text-box {
+        max-width: 220px; /* Endrer max-width på mindre skjermer */
+        padding: 10px; /* Reduserer padding på små skjermer */
+    }
+}
+
+
+/* Container for hele about-siden */
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+/* Stil for teksten øverst */
+.about-text {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px var(--background-color);
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Flexbox for bilde + tekst-seksjonen */
+.about-flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Stil for bildet til venstre */
+.about-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 15rem;
+}
+
+/* Stil for teksten til høyre */
+.about-info {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sentraliserer about-companyInfo under de andre boksene */
+.about-companyInfo {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    gap: 40px;
+}
+
+.about-companyInfo button{
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-companyInfo button:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* Portfolio-seksjonen tilpasset main */
+.portfolio-container {
+    display: flex;
+    flex-direction: column; /* Plasserer objektene under hverandre */
+    align-items: center; /* Sentrerer innholdet */
+    gap: 20px; /* Økt mellomrom for et luftigere design */
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+/* Grid-lignende layout med display flex */
+.company-row {
+    display: flex;
+    justify-content: center; /* Sentrerer kortene */
+    gap: 40px; /* Avstand mellom kolonner */
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* Gjør at kortene kan gå til neste rad på små skjermer */
+}
+
+/* Juster kortene for å ha to per rad */
+.company-card {
+    width: calc(50% - 20px); /* To kort per rad med mellomrom */
+    max-width: 450px;
+    height: 450px;
+    background: linear-gradient(135deg, var(--background-color), var(--secondary-color));
+    border: 2px solid var(--primary-color);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Effekt når man holder musen over kortene */
+.company-card:hover {
+    transform: scale(1.05);
+}
+
+/* Sikrer at bildene tar lik plass */
+.company-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Større overskrifter for bedre lesbarhet */
+.company-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--contrast-color);
+}
+
+/* Justerer teksten */
+.company-card p {
+    font-size: 1rem;
+    color: #fff;
+    margin: 5px 0;
+}
+
+/* Justerer knappen - sørger for at den alltid er nederst */
+.company-card button {
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    margin-top: auto;
+}
+
+/* Effekt når man holder musen over knappen */
+.company-card button:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Responsiv justering for mindre skjermer */
+@media (max-width: 768px) {
+    .company-row {
+        flex-direction: column; /* Endrer til én kolonne på små skjermer */
+        align-items: center;
+    }
+
+    .company-card {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Responsiv justering for mindre skjermer */
+@media (max-width: 768px) {
+    .company-row {
+        flex-direction: column; /* Endrer til én kolonne på små skjermer */
+        align-items: center;
+    }
+
+    .company-card {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.connect-btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+}
+.connect-btn button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+
+.connect-btn button:hover {
+    background-color: var(--primary-color   );
+}
+
+
+/* Kontakt seksjonen */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: auto;
+}
+
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    color: var(--contrast-color);
+    margin-bottom: 20px;
+}
+
+.contact-container button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-container button:hover {
+    background-color: var(--primary-color);
+}
+
+
+
+/* STIL FOR SKJEMA */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+    background: var(--accent-color);
+    color: var(--background-color);
+}
+
+#responseMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
